@@ -11,7 +11,7 @@ interface LanguageContextType {
 const translations = {
   en: {
     siteTitle: "France–Japan Business Events",
-    siteDescription: "Connecting French and Japanese business communities through exclusive networking events and professional opportunities.",
+    siteDescription: "Connecting French and Japanese business and cultural communities through exclusive networking events and professional opportunities.",
     upcomingEvents: "Upcoming Events",
     newsletter: "Stay Updated",
     newsletterDescription: "Subscribe to receive updates about upcoming events and opportunities.",
@@ -25,10 +25,17 @@ const translations = {
     eventDate: "Date",
     eventLocation: "Location",
     adSpace: "Advertisement Space",
+    filterAll: "All",
+    filterFrance: "France",
+    filterJapan: "Japan",
+    filterBusiness: "Business",
+    filterCultural: "Cultural",
+    business: "Business",
+    cultural: "Cultural",
   },
   ja: {
     siteTitle: "日仏ビジネスイベント",
-    siteDescription: "フランスと日本のビジネスコミュニティを結ぶ、限定ネットワーキングイベントとプロフェッショナルな機会を提供します。",
+    siteDescription: "フランスと日本のビジネスおよび文化コミュニティを結ぶ、限定ネットワーキングイベントとプロフェッショナルな機会を提供します。",
     upcomingEvents: "今後のイベント",
     newsletter: "最新情報を受け取る",
     newsletterDescription: "今後のイベントや機会に関する最新情報を受け取るには、ご登録ください。",
@@ -42,6 +49,13 @@ const translations = {
     eventDate: "日付",
     eventLocation: "場所",
     adSpace: "広告スペース",
+    filterAll: "すべて",
+    filterFrance: "フランス",
+    filterJapan: "日本",
+    filterBusiness: "ビジネス",
+    filterCultural: "文化",
+    business: "ビジネス",
+    cultural: "文化",
   },
 };
 

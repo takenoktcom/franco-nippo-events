@@ -1,6 +1,7 @@
 import { Calendar, MapPin, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface EventCardProps {
@@ -9,14 +10,24 @@ interface EventCardProps {
   city: string;
   description: string;
   registrationLink: string;
+  location: 'france' | 'japan';
+  type: 'business' | 'cultural';
 }
 
-const EventCard = ({ title, date, city, description, registrationLink }: EventCardProps) => {
+const EventCard = ({ title, date, city, description, registrationLink, location, type }: EventCardProps) => {
   const { t } = useLanguage();
   
   return (
     <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
       <CardHeader>
+        <div className="flex gap-2 mb-3">
+          <Badge variant={location === 'france' ? 'default' : 'secondary'} className="text-sm">
+            {location === 'france' ? '🇫🇷' : '🇯🇵'} {location === 'france' ? 'France' : 'Japan'}
+          </Badge>
+          <Badge variant="outline" className="text-sm">
+            {t(type)}
+          </Badge>
+        </div>
         <CardTitle className="text-2xl text-primary">{title}</CardTitle>
         <CardDescription className="flex flex-col gap-2 mt-2">
           <div className="flex items-center gap-2 text-foreground">
