@@ -6,61 +6,61 @@ const Events = () => {
 
   const events = language === 'en' ? [
     {
-      title: "Franco-Japanese Tech Summit 2025",
-      date: "March 15, 2025",
-      city: "Paris, France",
-      description: "Join industry leaders to explore emerging technologies and innovation opportunities between France and Japan.",
-      registrationLink: "https://example.com/register/tech-summit"
-    },
-    {
-      title: "Sustainable Business Forum",
-      date: "April 22, 2025",
+      title: "French-Japanese Business Summit 2025",
+      date: "November 6, 2025",
       city: "Tokyo, Japan",
-      description: "Discuss sustainable practices and green technologies with executives from both nations committed to environmental responsibility.",
-      registrationLink: "https://example.com/register/sustainable-forum"
+      description: "Bilateral cooperation between French & Japanese companies, strengthening economic ties and fostering new partnerships.",
+      registrationLink: "https://www.ccifj.or.jp/en/events/upcoming-events/event-details/event/french-japanese-business-summit-2025.html"
     },
     {
-      title: "Luxury Goods & Fashion Symposium",
-      date: "May 10, 2025",
-      city: "Lyon, France",
-      description: "Network with luxury brand representatives and explore collaboration opportunities in the premium goods sector.",
-      registrationLink: "https://example.com/register/luxury-symposium"
+      title: "French/Japanese Conference on International Economies: Challenges Ahead",
+      date: "February 28 - March 1, 2026",
+      city: "Kyoto, Japan",
+      description: "International economics conference with French & Japanese academic and business involvement, addressing global economic challenges.",
+      registrationLink: "https://fjc2026.sciencesconf.org/"
     },
     {
-      title: "Startup Acceleration Workshop",
-      date: "June 5, 2025",
-      city: "Osaka, Japan",
-      description: "A hands-on workshop connecting French and Japanese startups with investors and mentors for cross-border growth.",
-      registrationLink: "https://example.com/register/startup-workshop"
+      title: "Japan Expo Paris 2026",
+      date: "July 9-12, 2026",
+      city: "Paris, France",
+      description: "Celebrating Japanese culture in France with strong cultural exchange between France and Japan, featuring anime, manga, gaming, and traditional arts.",
+      registrationLink: "https://www.japan-expo-paris.com/en/"
+    },
+    {
+      title: "Sumo Tournament Paris 2026",
+      date: "June 2026",
+      city: "Paris, France (Accor Arena)",
+      description: "A cultural-sporting event bridging Japan's sumo tradition and French audiences, featuring professional sumo wrestlers in Paris.",
+      registrationLink: "https://english.aawsat.com/culture/5102855-sumo-stage-event-paris-part-global-push"
     },
   ] : [
     {
-      title: "日仏テックサミット 2025",
-      date: "2025年3月15日",
-      city: "フランス・パリ",
-      description: "業界のリーダーと共に、フランスと日本の間の新興技術とイノベーションの機会を探求します。",
-      registrationLink: "https://example.com/register/tech-summit"
-    },
-    {
-      title: "持続可能なビジネスフォーラム",
-      date: "2025年4月22日",
+      title: "日仏ビジネスサミット 2025",
+      date: "2025年11月6日",
       city: "日本・東京",
-      description: "環境責任にコミットする両国の経営者と、持続可能な実践と環境技術について議論します。",
-      registrationLink: "https://example.com/register/sustainable-forum"
+      description: "フランスと日本の企業間の二国間協力、経済的つながりの強化と新しいパートナーシップの促進。",
+      registrationLink: "https://www.ccifj.or.jp/en/events/upcoming-events/event-details/event/french-japanese-business-summit-2025.html"
     },
     {
-      title: "高級品・ファッションシンポジウム",
-      date: "2025年5月10日",
-      city: "フランス・リヨン",
-      description: "ラグジュアリーブランドの代表者とネットワーキングし、プレミアム商品部門でのコラボレーション機会を探ります。",
-      registrationLink: "https://example.com/register/luxury-symposium"
+      title: "日仏国際経済会議：今後の課題",
+      date: "2026年2月28日 - 3月1日",
+      city: "日本・京都",
+      description: "フランスと日本の学術界およびビジネス界が参加する国際経済会議で、グローバルな経済課題に取り組みます。",
+      registrationLink: "https://fjc2026.sciencesconf.org/"
     },
     {
-      title: "スタートアップアクセラレーションワークショップ",
-      date: "2025年6月5日",
-      city: "日本・大阪",
-      description: "国境を越えた成長のために、フランスと日本のスタートアップを投資家やメンターと結びつけるハンズオンワークショップ。",
-      registrationLink: "https://example.com/register/startup-workshop"
+      title: "ジャパンエキスポ パリ 2026",
+      date: "2026年7月9日-12日",
+      city: "フランス・パリ",
+      description: "フランスで日本文化を祝う、フランスと日本の強力な文化交流イベント。アニメ、マンガ、ゲーム、伝統芸術を特集。",
+      registrationLink: "https://www.japan-expo-paris.com/en/"
+    },
+    {
+      title: "相撲トーナメント パリ 2026",
+      date: "2026年6月",
+      city: "フランス・パリ（アコーアリーナ）",
+      description: "日本の相撲の伝統とフランスの観客を結ぶ文化スポーツイベント。プロの力士がパリで競演します。",
+      registrationLink: "https://english.aawsat.com/culture/5102855-sumo-stage-event-paris-part-global-push"
     },
   ];
 
