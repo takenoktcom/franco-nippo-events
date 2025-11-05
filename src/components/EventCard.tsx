@@ -15,7 +15,7 @@ const EventCard = ({ title, date, city, description, registrationLink }: EventCa
   const { t } = useLanguage();
   
   return (
-    <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
       <CardHeader>
         <CardTitle className="text-2xl text-primary">{title}</CardTitle>
         <CardDescription className="flex flex-col gap-2 mt-2">
@@ -29,7 +29,7 @@ const EventCard = ({ title, date, city, description, registrationLink }: EventCa
           </div>
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-1">
         <p className="text-muted-foreground leading-relaxed">{description}</p>
       </CardContent>
       <CardFooter>
