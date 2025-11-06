@@ -1,25 +1,347 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>France–Japan Business and Cultural Events | Franco-Japanese Networking</title>
-    <meta name="description" content="Connecting French and Japanese communities through business and cultural events. Join our professional and cultural gatherings in Paris, Tokyo, and beyond." />
-    <meta name="keywords" content="France Japan business, Franco-Japanese events, business networking, cultural events, Japan Expo, international events, Paris Tokyo" />
-    <meta name="author" content="France–Japan Business and Cultural Events" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>France–Japan Business and Cultural Events | Franco-Japanese Networking</title>
+  <meta name="description" content="Connecting French and Japanese communities through business and cultural events. Join our professional and cultural gatherings in Paris, Tokyo, and beyond." />
+  <meta name="keywords" content="France Japan business, Franco-Japanese events, business networking, cultural events, Japan Expo, international events, Paris Tokyo" />
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container { max-width: 1200px; margin: 0 auto; }
+    
+    header { 
+      text-align: center; 
+      margin-bottom: 3rem; 
+      color: white;
+      padding: 2rem 0;
+    }
+    
+    h1 { 
+      font-size: 2.5rem; 
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    
+    .subtitle { 
+      font-size: 1.1rem; 
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+    
+    .filters {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    
+    .filter-group {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      padding: 0.5rem;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      border: 2px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+    
+    .filter-btn.active {
+      background: white;
+      color: #667eea;
+      border-color: white;
+    }
+    
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .event {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .event:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    }
+    
+    .event.hidden {
+      display: none;
+    }
+    
+    .event::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+    }
+    
+    .event.france::before {
+      background: linear-gradient(90deg, #002395 0%, #ED2939 50%, #002395 100%);
+    }
+    
+    .event.japan::before {
+      background: linear-gradient(90deg, #BC002D 0%, white 50%, #BC002D 100%);
+    }
+    
+    .badges {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .badge {
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    
+    .badge.france {
+      background: #002395;
+      color: white;
+    }
+    
+    .badge.japan {
+      background: #BC002D;
+      color: white;
+    }
+    
+    .badge.business {
+      background: #10b981;
+      color: white;
+    }
+    
+    .badge.cultural {
+      background: #f59e0b;
+      color: white;
+    }
+    
+    .event h2 {
+      color: #1f2937;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .event-details {
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    
+    .event-details strong {
+      color: #374151;
+    }
+    
+    .event-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    
+    .event-link:hover {
+      color: #764ba2;
+    }
+    
+    footer {
+      text-align: center;
+      color: white;
+      padding: 2rem 0;
+      opacity: 0.9;
+    }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      .events-grid { grid-template-columns: 1fr; }
+      .filter-group { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>France–Japan Business and Cultural Events</h1>
+      <p class="subtitle">Connecting professionals, innovators, and organizations across France and Japan</p>
+      
+      <div class="filters">
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="location" data-value="all">All Locations</button>
+          <button class="filter-btn" data-filter="location" data-value="france">🇫🇷 France</button>
+          <button class="filter-btn" data-filter="location" data-value="japan">🇯🇵 Japan</button>
+        </div>
+        
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="type" data-value="all">All Types</button>
+          <button class="filter-btn" data-filter="type" data-value="business">Business</button>
+          <button class="filter-btn" data-filter="type" data-value="cultural">Cultural</button>
+        </div>
+      </div>
+    </header>
 
-    <meta property="og:title" content="France–Japan Business and Cultural Events" />
-    <meta property="og:description" content="Connecting French and Japanese communities through exclusive networking events, cultural celebrations, and professional opportunities." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <div class="events-grid">
+      <div class="event france business" data-location="france" data-type="business">
+        <div class="badges">
+          <span class="badge france">🇫🇷 France</span>
+          <span class="badge business">Business</span>
+        </div>
+        <h2>Paris Innovation Summit 2025</h2>
+        <p class="event-details"><strong>Date:</strong> March 15–17, 2025</p>
+        <p class="event-details"><strong>Location:</strong> Paris Convention Center</p>
+        <p class="event-details"><strong>Focus:</strong> Tech startups, AI collaboration, and Franco-Japanese investment opportunities.</p>
+        <a href="#" class="event-link">Register now →</a>
+      </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+      <div class="event japan cultural" data-location="japan" data-type="cultural">
+        <div class="badges">
+          <span class="badge japan">🇯🇵 Japan</span>
+          <span class="badge cultural">Cultural</span>
+        </div>
+        <h2>Japanese Film Festival in Paris</h2>
+        <p class="event-details"><strong>Date:</strong> April 5–12, 2025</p>
+        <p class="event-details"><strong>Location:</strong> Various Paris venues</p>
+        <p class="event-details"><strong>Focus:</strong> Contemporary Japanese cinema, workshops with directors, and cultural discussions.</p>
+        <a href="#" class="event-link">Learn more →</a>
+      </div>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+      <div class="event japan business" data-location="japan" data-type="business">
+        <div class="badges">
+          <span class="badge japan">🇯🇵 Japan</span>
+          <span class="badge business">Business</span>
+        </div>
+        <h2>Tokyo–Paris Business Forum</h2>
+        <p class="event-details"><strong>Date:</strong> May 20–22, 2025</p>
+        <p class="event-details"><strong>Location:</strong> Tokyo International Forum</p>
+        <p class="event-details"><strong>Focus:</strong> Clean tech, sustainable business partnerships, and bilateral trade agreements.</p>
+        <a href="#" class="event-link">Register now →</a>
+      </div>
+
+      <div class="event france cultural" data-location="france" data-type="cultural">
+        <div class="badges">
+          <span class="badge france">🇫🇷 France</span>
+          <span class="badge cultural">Cultural</span>
+        </div>
+        <h2>Japan Expo Paris 2025</h2>
+        <p class="event-details"><strong>Date:</strong> July 3–6, 2025</p>
+        <p class="event-details"><strong>Location:</strong> Paris Nord Villepinte</p>
+        <p class="event-details"><strong>Focus:</strong> Japanese pop culture, manga, anime, traditional arts, and gastronomy.</p>
+        <a href="#" class="event-link">Get tickets →</a>
+      </div>
+
+      <div class="event japan cultural" data-location="japan" data-type="cultural">
+        <div class="badges">
+          <span class="badge japan">🇯🇵 Japan</span>
+          <span class="badge cultural">Cultural</span>
+        </div>
+        <h2>French Cultural Week in Kyoto</h2>
+        <p class="event-details"><strong>Date:</strong> June 10–17, 2025</p>
+        <p class="event-details"><strong>Location:</strong> Kyoto International Community House</p>
+        <p class="event-details"><strong>Focus:</strong> French cuisine, wine tasting, art exhibitions, and language exchange.</p>
+        <a href="#" class="event-link">More details →</a>
+      </div>
+
+      <div class="event france business" data-location="france" data-type="business">
+        <div class="badges">
+          <span class="badge france">🇫🇷 France</span>
+          <span class="badge business">Business</span>
+        </div>
+        <h2>French Startup Networking Night</h2>
+        <p class="event-details"><strong>Date:</strong> April 28, 2025</p>
+        <p class="event-details"><strong>Location:</strong> Station F, Paris</p>
+        <p class="event-details"><strong>Focus:</strong> Japanese investors meet French startups, pitch sessions, and networking.</p>
+        <a href="#" class="event-link">RSVP →</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 France–Japan Business and Cultural Events</p>
+    </footer>
+  </div>
+
+  <script>
+    // Filter functionality
+    let currentLocation = 'all';
+    let currentType = 'all';
+
+    function filterEvents() {
+      const events = document.querySelectorAll('.event');
+      events.forEach(event => {
+        const eventLocation = event.dataset.location;
+        const eventType = event.dataset.type;
+        
+        const locationMatch = currentLocation === 'all' || eventLocation === currentLocation;
+        const typeMatch = currentType === 'all' || eventType === currentType;
+        
+        if (locationMatch && typeMatch) {
+          event.classList.remove('hidden');
+        } else {
+          event.classList.add('hidden');
+        }
+      });
+    }
+
+    // Handle filter button clicks
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const filterType = this.dataset.filter;
+        const filterValue = this.dataset.value;
+        
+        // Update active state within the same filter group
+        this.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Update filter state
+        if (filterType === 'location') {
+          currentLocation = filterValue;
+        } else if (filterType === 'type') {
+          currentType = filterValue;
+        }
+        
+        filterEvents();
+      });
+    });
+  </script>
+</body>
 </html>
