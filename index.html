@@ -40,30 +40,16 @@
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      width: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 600px;
       height: 200px;
       background-image: url('france-japan-header.png');
       background-size: cover;
-      background-position: right center;
-      opacity: 0.4;
+      background-position: center;
+      opacity: 0.15;
       z-index: 0;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-    
-    header::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      height: 200px;
-      background-image: url('france-japan-header.png');
-      background-size: cover;
-      background-position: left center;
-      opacity: 0.4;
-      z-index: 0;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
     
     header > * {
