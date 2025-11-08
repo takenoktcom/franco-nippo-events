@@ -31,10 +31,30 @@
       text-align: center; 
       margin-bottom: 3rem; 
       color: #1f2937;
-      padding: 2rem 0;
-      border-bottom: 3px solid transparent;
-      border-image: linear-gradient(90deg, #002395 0%, #ED2939 100%);
-      border-image-slice: 1;
+      padding: 3rem 0 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 600px;
+      height: 200px;
+      background-image: url('france-japan-header.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    
+    header > * {
+      position: relative;
+      z-index: 1;
     }
     
     h1 { 
