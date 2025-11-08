@@ -20,7 +20,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; 
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #ffffff;
       min-height: 100vh;
       padding: 20px;
     }
@@ -30,8 +30,11 @@
     header { 
       text-align: center; 
       margin-bottom: 3rem; 
-      color: white;
+      color: #1f2937;
       padding: 2rem 0;
+      border-bottom: 3px solid transparent;
+      border-image: linear-gradient(90deg, #002395 0%, #ED2939 100%);
+      border-image-slice: 1;
     }
     
     h1 { 
@@ -42,7 +45,7 @@
     
     .subtitle { 
       font-size: 1.1rem; 
-      opacity: 0.9;
+      color: #6b7280;
       margin-bottom: 2rem;
     }
     
@@ -57,17 +60,17 @@
     .filter-group {
       display: flex;
       gap: 0.5rem;
-      background: rgba(255,255,255,0.1);
+      background: #f9fafb;
       padding: 0.5rem;
       border-radius: 12px;
-      backdrop-filter: blur(10px);
+      border: 1px solid #e5e7eb;
     }
     
     .filter-btn {
       padding: 0.6rem 1.2rem;
-      border: 2px solid rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.1);
-      color: white;
+      border: 1px solid #e5e7eb;
+      background: white;
+      color: #374151;
       border-radius: 8px;
       cursor: pointer;
       font-size: 0.95rem;
@@ -76,14 +79,14 @@
     }
     
     .filter-btn:hover {
-      background: rgba(255,255,255,0.2);
+      background: #f3f4f6;
       transform: translateY(-2px);
     }
     
     .filter-btn.active {
-      background: white;
-      color: #667eea;
-      border-color: white;
+      background: linear-gradient(90deg, #002395 0%, #ED2939 100%);
+      color: white;
+      border-color: transparent;
     }
     
     .events-grid {
@@ -197,9 +200,10 @@
     
     footer {
       text-align: center;
-      color: white;
+      color: #6b7280;
       padding: 2rem 0;
-      opacity: 0.9;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 3rem;
     }
     
     @media (max-width: 768px) {
