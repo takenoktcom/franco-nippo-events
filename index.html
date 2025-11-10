@@ -31,30 +31,18 @@
       text-align: center; 
       margin-bottom: 3rem; 
       color: #1f2937;
-      padding: 3rem 0 2rem 0;
+      padding: 2rem 0 2rem 0;
       position: relative;
-      overflow: hidden;
     }
     
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
+    .hero-image {
       width: 100%;
-      max-width: 600px;
-      height: 200px;
-      background-image: url('france-japan-header.png');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.15;
-      z-index: 0;
-    }
-    
-    header > * {
-      position: relative;
-      z-index: 1;
+      max-width: 800px;
+      height: auto;
+      margin: 0 auto 1.5rem auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     
     h1 { 
@@ -64,9 +52,10 @@
     }
     
     .subtitle { 
-      font-size: 1.1rem; 
+      font-size: 0.95rem; 
       color: #6b7280;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+      margin-top: -0.5rem;
     }
     
     .filters {
@@ -238,6 +227,7 @@
     <header>
       <h1>France–Japan Business and Cultural Events</h1>
       <p class="subtitle">Connecting professionals, innovators, and organizations across France and Japan</p>
+      <img src="france-japan-hero.png" alt="France and Japan cultural fusion featuring Eiffel Tower and Great Wave" class="hero-image">
       
       <div class="filters">
         <div class="filter-group">
