@@ -374,19 +374,33 @@
       if (!dateMatch) return null;
       
       const dateStr = dateMatch[1].trim();
+      
       // Handle different date formats
       if (dateStr.includes('–')) {
-        // Range like "November 21–23, 2025" - use end date
         const parts = dateStr.split('–');
+        const startPart = parts[0].trim();
         const endPart = parts[1].trim();
-        return new Date(endPart);
+        
+        // Check if end part has a month (e.g., "March 1, 2026") or just a day (e.g., "23, 2025")
+        if (endPart.match(/^[A-Za-z]/)) {
+          // End part has month name, use it directly
+          return new Date(endPart);
+        } else {
+          // End part is just day and year, extract month from start
+          const monthMatch = startPart.match(/([A-Za-z]+)\s+\d+/);
+          if (monthMatch) {
+            const month = monthMatch[1];
+            return new Date(`${month} ${endPart}`);
+          }
+          return new Date(endPart);
+        }
       } else if (dateStr.includes('-')) {
         // Range like "27 Nov-28 Nov 2025" - use end date
         const parts = dateStr.split('-');
         const endPart = parts[1].trim();
         return new Date(endPart);
       } else {
-        // Single date
+        // Single date like "November 17, 2025" or "June 2026"
         return new Date(dateStr);
       }
     }
