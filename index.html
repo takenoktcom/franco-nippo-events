@@ -232,6 +232,12 @@
           <button class="filter-btn" data-filter="type" data-value="business">Business</button>
           <button class="filter-btn" data-filter="type" data-value="cultural">Cultural</button>
         </div>
+        
+        <div class="filter-group">
+          <button class="filter-btn" data-filter="time" data-value="all">All Time</button>
+          <button class="filter-btn" data-filter="time" data-value="past">Past</button>
+          <button class="filter-btn active" data-filter="time" data-value="future">Future</button>
+        </div>
       </div>
     </header>
 
@@ -360,17 +366,54 @@
     // Filter functionality
     let currentLocation = 'all';
     let currentType = 'all';
+    let currentTime = 'future';
+
+    function parseEventDate(event) {
+      const dateText = event.querySelector('.event-details').textContent;
+      const dateMatch = dateText.match(/Date:\s*([^<]+)/);
+      if (!dateMatch) return null;
+      
+      const dateStr = dateMatch[1].trim();
+      // Handle different date formats
+      if (dateStr.includes('–')) {
+        // Range like "November 21–23, 2025" - use end date
+        const parts = dateStr.split('–');
+        const endPart = parts[1].trim();
+        return new Date(endPart);
+      } else if (dateStr.includes('-')) {
+        // Range like "27 Nov-28 Nov 2025" - use end date
+        const parts = dateStr.split('-');
+        const endPart = parts[1].trim();
+        return new Date(endPart);
+      } else {
+        // Single date
+        return new Date(dateStr);
+      }
+    }
 
     function filterEvents() {
       const events = document.querySelectorAll('.event');
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      
       events.forEach(event => {
         const eventLocation = event.dataset.location;
         const eventType = event.dataset.type;
+        const eventDate = parseEventDate(event);
         
         const locationMatch = currentLocation === 'all' || eventLocation === currentLocation;
         const typeMatch = currentType === 'all' || eventType === currentType;
         
-        if (locationMatch && typeMatch) {
+        let timeMatch = true;
+        if (currentTime !== 'all' && eventDate) {
+          if (currentTime === 'future') {
+            timeMatch = eventDate >= today;
+          } else if (currentTime === 'past') {
+            timeMatch = eventDate < today;
+          }
+        }
+        
+        if (locationMatch && typeMatch && timeMatch) {
           event.classList.remove('hidden');
         } else {
           event.classList.add('hidden');
@@ -393,11 +436,16 @@
           currentLocation = filterValue;
         } else if (filterType === 'type') {
           currentType = filterValue;
+        } else if (filterType === 'time') {
+          currentTime = filterValue;
         }
         
         filterEvents();
       });
     });
+    
+    // Apply initial filter on page load
+    filterEvents();
   </script>
 </body>
 </html>
