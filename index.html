@@ -104,7 +104,7 @@
     
     .event {
       background: white;
-      padding: 1.5rem;
+      padding: 0;
       border-radius: 16px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.12);
       transition: all 0.3s ease;
@@ -112,6 +112,19 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+    }
+    
+    .event-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    
+    .event-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
     
     .event:hover {
@@ -250,65 +263,80 @@
 
     <div class="events-grid">
       <div class="event japan business" data-location="japan" data-type="business">
-        <div class="badges">
-          <span class="badge japan">🇯🇵 Japan</span>
-          <span class="badge business">Business</span>
+        <img src="public/images/business-summit.jpg" alt="Business Summit" class="event-image">
+        <div class="event-content">
+          <div class="badges">
+            <span class="badge japan">🇯🇵 Japan</span>
+            <span class="badge business">Business</span>
+          </div>
+          <h2>French-Japanese Business Summit 2025</h2>
+          <p class="event-details"><strong>Date:</strong> November 6, 2025</p>
+          <p class="event-details"><strong>Location:</strong> Tokyo, Japan</p>
+          <p class="event-details"><strong>Organizer:</strong> CCI France Japon</p>
+          <p class="event-details"><strong>Focus:</strong> Bilateral cooperation, French & Japanese companies, strengthening ties.</p>
+          <a href="https://www.ccifj.or.jp/en/events/upcoming-events/event-details/event/french-japanese-business-summit-2025.html" target="_blank" class="event-link">Learn more →</a>
         </div>
-        <h2>French-Japanese Business Summit 2025</h2>
-        <p class="event-details"><strong>Date:</strong> November 6, 2025</p>
-        <p class="event-details"><strong>Location:</strong> Tokyo, Japan</p>
-        <p class="event-details"><strong>Organizer:</strong> CCI France Japon</p>
-        <p class="event-details"><strong>Focus:</strong> Bilateral cooperation, French & Japanese companies, strengthening ties.</p>
-        <a href="https://www.ccifj.or.jp/en/events/upcoming-events/event-details/event/french-japanese-business-summit-2025.html" target="_blank" class="event-link">Learn more →</a>
       </div>
 
       <div class="event japan business" data-location="japan" data-type="business">
-        <div class="badges">
-          <span class="badge japan">🇯🇵 Japan</span>
-          <span class="badge business">Business</span>
+        <img src="public/images/business-france.jpg" alt="Business in France" class="event-image">
+        <div class="event-content">
+          <div class="badges">
+            <span class="badge japan">🇯🇵 Japan</span>
+            <span class="badge business">Business</span>
+          </div>
+          <h2>How to do Business in France</h2>
+          <p class="event-details"><strong>Date:</strong> November 17, 2025</p>
+          <p class="event-details"><strong>Location:</strong> L'Espace @ CCI France Japon, Tokyo, Japan</p>
+          <p class="event-details"><strong>Organizer:</strong> CCI France Japon</p>
+          <p class="event-details"><strong>Focus:</strong> Seminar for Japanese companies/investors about doing business in France.</p>
+          <a href="https://www.ccifj.or.jp/en/events/upcoming-events/event-details/event/how-to-do-business-in-france.html" target="_blank" class="event-link">Learn more →</a>
         </div>
-        <h2>How to do Business in France</h2>
-        <p class="event-details"><strong>Date:</strong> November 17, 2025</p>
-        <p class="event-details"><strong>Location:</strong> L'Espace @ CCI France Japon, Tokyo, Japan</p>
-        <p class="event-details"><strong>Organizer:</strong> CCI France Japon</p>
-        <p class="event-details"><strong>Focus:</strong> Seminar for Japanese companies/investors about doing business in France.</p>
-        <a href="https://www.ccifj.or.jp/en/events/upcoming-events/event-details/event/how-to-do-business-in-france.html" target="_blank" class="event-link">Learn more →</a>
       </div>
 
       <div class="event france cultural" data-location="france" data-type="cultural">
-        <div class="badges">
-          <span class="badge france">🇫🇷 France</span>
-          <span class="badge cultural">Cultural</span>
+        <img src="public/images/salon-idees-japon.jpg" alt="Salon Idées Japon" class="event-image">
+        <div class="event-content">
+          <div class="badges">
+            <span class="badge france">🇫🇷 France</span>
+            <span class="badge cultural">Cultural</span>
+          </div>
+          <h2>Salon Idées Japon 2025</h2>
+          <p class="event-details"><strong>Date:</strong> November 21–23, 2025</p>
+          <p class="event-details"><strong>Location:</strong> Bastille Design Center, Paris, France</p>
+          <p class="event-details"><strong>Focus:</strong> Japanese-design and cultural market featuring 60 Franco-Japanese designers, 19 workshops and 12 conferences.</p>
+          <a href="https://www.sortiraparis.com/en/what-to-do-in-paris/shows-and-fairs/articles/78409-salon-idees-japon-the-japanese-christmas-market-is-coming-to-the-bastille-design-center" target="_blank" class="event-link">Learn more →</a>
         </div>
-        <h2>Salon Idées Japon 2025</h2>
-        <p class="event-details"><strong>Date:</strong> November 21–23, 2025</p>
-        <p class="event-details"><strong>Location:</strong> Bastille Design Center, Paris, France</p>
-        <p class="event-details"><strong>Focus:</strong> Japanese-design and cultural market featuring 60 Franco-Japanese designers, 19 workshops and 12 conferences.</p>
-        <a href="https://www.sortiraparis.com/en/what-to-do-in-paris/shows-and-fairs/articles/78409-salon-idees-japon-the-japanese-christmas-market-is-coming-to-the-bastille-design-center" target="_blank" class="event-link">Learn more →</a>
       </div>
 
       <div class="event france cultural" data-location="france" data-type="cultural">
-        <div class="badges">
-          <span class="badge france">🇫🇷 France</span>
-          <span class="badge cultural">Cultural</span>
+        <img src="public/images/japan-fes.jpg" alt="JAPAN Fes Paris" class="event-image">
+        <div class="event-content">
+          <div class="badges">
+            <span class="badge france">🇫🇷 France</span>
+            <span class="badge cultural">Cultural</span>
+          </div>
+          <h2>JAPAN Fes — Paris</h2>
+          <p class="event-details"><strong>Date:</strong> November 22, 2025</p>
+          <p class="event-details"><strong>Location:</strong> Saint-Germain-des-Prés, Paris, France</p>
+          <p class="event-details"><strong>Focus:</strong> Large Japan food & culture street festival with pop-up B2B/B2C matchmaking opportunities.</p>
+          <a href="https://japan-fes.com/" target="_blank" class="event-link">Learn more →</a>
         </div>
-        <h2>JAPAN Fes — Paris</h2>
-        <p class="event-details"><strong>Date:</strong> November 22, 2025</p>
-        <p class="event-details"><strong>Location:</strong> Saint-Germain-des-Prés, Paris, France</p>
-        <p class="event-details"><strong>Focus:</strong> Large Japan food & culture street festival with pop-up B2B/B2C matchmaking opportunities.</p>
-        <a href="https://japan-fes.com/" target="_blank" class="event-link">Learn more →</a>
       </div>
 
       <div class="event france business" data-location="france" data-type="business">
-        <div class="badges">
-          <span class="badge france">🇫🇷 France</span>
-          <span class="badge business">Business</span>
+        <img src="public/images/france-japan-forum.jpg" alt="France-Japan Forum" class="event-image">
+        <div class="event-content">
+          <div class="badges">
+            <span class="badge france">🇫🇷 France</span>
+            <span class="badge business">Business</span>
+          </div>
+          <h2>France–Japan Forum 2025 (JSPS–JST)</h2>
+          <p class="event-details"><strong>Date:</strong> November 24–26, 2025</p>
+          <p class="event-details"><strong>Location:</strong> INSA Lyon & École Centrale Lyon, Villeurbanne / Écully, France</p>
+          <p class="event-details"><strong>Focus:</strong> Research & industry forum on Energy Transition & Materials — R&D partnerships and tech transfer.</p>
+          <a href="https://jsps-strasbourg.com/" target="_blank" class="event-link">Learn more →</a>
         </div>
-        <h2>France–Japan Forum 2025 (JSPS–JST)</h2>
-        <p class="event-details"><strong>Date:</strong> November 24–26, 2025</p>
-        <p class="event-details"><strong>Location:</strong> INSA Lyon & École Centrale Lyon, Villeurbanne / Écully, France</p>
-        <p class="event-details"><strong>Focus:</strong> Research & industry forum on Energy Transition & Materials — R&D partnerships and tech transfer.</p>
-        <a href="https://jsps-strasbourg.com/" target="_blank" class="event-link">Learn more →</a>
       </div>
 
       <div class="event japan business" data-location="japan" data-type="business">
@@ -325,15 +353,18 @@
       </div>
 
       <div class="event japan cultural" data-location="japan" data-type="cultural">
-        <div class="badges">
-          <span class="badge japan">🇯🇵 Japan</span>
-          <span class="badge cultural">Cultural</span>
+        <img src="public/images/festival-intemporel.jpg" alt="Festival de l'Intemporel" class="event-image">
+        <div class="event-content">
+          <div class="badges">
+            <span class="badge japan">🇯🇵 Japan</span>
+            <span class="badge cultural">Cultural</span>
+          </div>
+          <h2>Festival de l'Intemporel</h2>
+          <p class="event-details"><strong>Date:</strong> November 27 – December 1, 2025</p>
+          <p class="event-details"><strong>Location:</strong> Tokyo Bunka Kaikan, Tokyo, Japan</p>
+          <p class="event-details"><strong>Focus:</strong> Music festival blending classical and contemporary arts, collaborated with French institution IRCAM (Paris) — strong French-cultural connection.</p>
+          <a href="https://www.t-bunka.jp/en/stage/Intemporel/index.html" target="_blank" class="event-link">Learn more →</a>
         </div>
-        <h2>Festival de l'Intemporel</h2>
-        <p class="event-details"><strong>Date:</strong> November 27 – December 1, 2025</p>
-        <p class="event-details"><strong>Location:</strong> Tokyo Bunka Kaikan, Tokyo, Japan</p>
-        <p class="event-details"><strong>Focus:</strong> Music festival blending classical and contemporary arts, collaborated with French institution IRCAM (Paris) — strong French-cultural connection.</p>
-        <a href="https://www.t-bunka.jp/en/stage/Intemporel/index.html" target="_blank" class="event-link">Learn more →</a>
       </div>
 
       <div class="event france business" data-location="france" data-type="business">
@@ -412,15 +443,18 @@
       </div>
 
       <div class="event france cultural" data-location="france" data-type="cultural">
-        <div class="badges">
-          <span class="badge france">🇫🇷 France</span>
-          <span class="badge cultural">Cultural</span>
+        <img src="public/images/japan-expo.jpg" alt="Japan Expo Paris" class="event-image">
+        <div class="event-content">
+          <div class="badges">
+            <span class="badge france">🇫🇷 France</span>
+            <span class="badge cultural">Cultural</span>
+          </div>
+          <h2>Japan Expo Paris 2026</h2>
+          <p class="event-details"><strong>Date:</strong> July 9–12, 2026</p>
+          <p class="event-details"><strong>Location:</strong> Paris, France</p>
+          <p class="event-details"><strong>Focus:</strong> Japanese culture in France, strong cultural exchange France ↔ Japan.</p>
+          <a href="https://www.japan-expo-paris.com/en/" target="_blank" class="event-link">Learn more →</a>
         </div>
-        <h2>Japan Expo Paris 2026</h2>
-        <p class="event-details"><strong>Date:</strong> July 9–12, 2026</p>
-        <p class="event-details"><strong>Location:</strong> Paris, France</p>
-        <p class="event-details"><strong>Focus:</strong> Japanese culture in France, strong cultural exchange France ↔ Japan.</p>
-        <a href="https://www.japan-expo-paris.com/en/" target="_blank" class="event-link">Learn more →</a>
       </div>
     </div>
 
